@@ -20,3 +20,30 @@ a {
 * {
   box-sizing: border-box;
 }
+.main-container {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr;s */
+  justify-items: center;
+  gap: 10px;
+}
+
+.accordion-container {
+  display: flex;
+}
+.accordion-container div {
+  margin-right: 3px;
+}
+/* Monile view */
+@media (max-width: 680px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .accordion-container {
+    display: block;
+  }
+
+  /* .article {
+    margin-bottom: 2em;
+  } */
+}

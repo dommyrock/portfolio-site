@@ -5,8 +5,8 @@ import style from "../../styles/accordion.module.css";
 
 //TODO: alter this to accept img optionaly and dynamic text inputs
 
-const Accordion = () => {
-  const defaultHeight = "100px";
+const Accordion = ({ children, isStackItem }) => {
+  const defaultHeight = !isStackItem ? "180px" : "50px";
 
   // Manages the open or cloased state of the accordion
   const [open, toggle] = useState(false);
@@ -17,15 +17,24 @@ const Accordion = () => {
   // Gets the height of the element (ref)
   const [ref, { height }] = useMeasure();
 
-  // Animations
+  // Animations ,height expansion calculation
   const expand = useSpring({
-    config: { friction: 10 },
-    height: open ? `${contentHeight}px` : defaultHeight,
+    config: { friction: 15 },
+    height: !isStackItem
+      ? open
+        ? `${contentHeight}px`
+        : defaultHeight
+      : open
+      ? `${contentHeight + 20}px`
+      : defaultHeight,
   });
   const spin = useSpring({
     config: { friction: 10 },
     transform: open ? "rotate(180deg)" : "rotate(0deg)",
   });
+  const maxWidth = {
+    maxWidth: isStackItem ? "200px" : "500px",
+  };
 
   useEffect(() => {
     //Sets initial height
@@ -39,30 +48,14 @@ const Accordion = () => {
   }, [height]);
 
   return (
-    <div className={style.wrapper}>
+    <div style={maxWidth}>
       <animated.div className={style.accordion} style={expand}>
         <div ref={ref} className={style.content}>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet,
-            eleifend turpis a, tincidunt velit. Curabitur vitae felis sit amet arcu blandit
-            pellentesque quis vitae odio. Aenean pharetra eu felis non suscipit. Etiam fermentum
-            enim sit amet magna scelerisque, eu mattis ligula tristique. Aliquam sed cursus odio,
-            sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus laoreet ut.
-            Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis
-            velit in ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus
-            nisl, ac sodales odio mauris et ante. Donec ipsum est, auctor a lorem ac, rutrum
-            elementum magna.
-          </p>
+          {children}
         </div>
       </animated.div>
       <animated.button className={style.expand} onClick={() => toggle(!open)} style={spin}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="#4b8bced6"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#4b8bced6">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
