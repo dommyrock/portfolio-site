@@ -35,215 +35,202 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <main className="main-container">
-        {/* <LinkedinEmbed /> Has some css leaks into global css   (solution is shadow dom)*/}
-        <div>
-          <section className="accordion-container" ref={a}>
-            <div>
-              <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-            </div>
-            <Accordion>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-                tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean
-                pharetra eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula
-                tristique. Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget
-                accumsan tellus laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus
-                venenatis velit in ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac
-                sodales odio mauris et ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-              </p>
-            </Accordion>
-            <span>
-              <h4 style={{ margin: 0 }}>Tech stack</h4>
-              <Accordion isStackItem={true}>
-                <FontAwesomeIcon icon={faVuejs} size="2x" color="#179c23" />
-                <FontAwesomeIcon icon={faReact} size="2x" color="#4b8bced6" spin />
-                <FontAwesomeIcon icon={faJsSquare} size="2x" color="#f2e018" />
-                <FontAwesomeIcon icon={faAws} size="2x" color="#f28c18" />
-                <FontAwesomeIcon icon={faVuejs} size="2x" color="#179c23" />
-                <FontAwesomeIcon icon={faReact} size="2x" color="#4b8bced6" spin />
-                <FontAwesomeIcon icon={faJsSquare} size="2x" color="#f2e018" />
-                <FontAwesomeIcon icon={faAws} size="2x" color="#f28c18" />
-              </Accordion>
-            </span>
-          </section>
-          <div className="accordion-container" ref={b}>
-            <div>
-              <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-            </div>
-            <Accordion>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-                tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean
-                pharetra eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula
-                tristique. Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget
-                accumsan tellus laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus
-                venenatis velit in ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac
-                sodales odio mauris et ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-              </p>
-            </Accordion>
+    <div className="home-container">
+      {/* <LinkedinEmbed /> Has some css leaks into global css   (solution is shadow dom)*/}
+      <div>
+        <section className="accordion-container" ref={a}>
+          <div>
+            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
           </div>
-          {/* TEST ONLY */}
-          <section className="accordion-container">
-            <div>
-              <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-            </div>
-            <Accordion>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-                tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean
-                pharetra eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula
-                tristique. Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget
-                accumsan tellus laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus
-                venenatis velit in ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac
-                sodales odio mauris et ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-              </p>
+          <Accordion>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
+              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
+              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
+              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
+              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
+              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
+              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
+            </p>
+          </Accordion>
+          <span>
+            <h4 style={{ margin: 0 }}>Tech stack</h4>
+            <Accordion isStackItem={true}>
+              <FontAwesomeIcon icon={faVuejs} size="2x" color="#179c23" />
+              <FontAwesomeIcon icon={faReact} size="2x" color="#4b8bced6" spin />
+              <FontAwesomeIcon icon={faJsSquare} size="2x" color="#f2e018" />
+              <FontAwesomeIcon icon={faAws} size="2x" color="#f28c18" />
+              <FontAwesomeIcon icon={faVuejs} size="2x" color="#179c23" />
+              <FontAwesomeIcon icon={faReact} size="2x" color="#4b8bced6" spin />
+              <FontAwesomeIcon icon={faJsSquare} size="2x" color="#f2e018" />
+              <FontAwesomeIcon icon={faAws} size="2x" color="#f28c18" />
             </Accordion>
-          </section>
-          <div className="accordion-container" ref={c}>
-            <div>
-              <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-            </div>
-            <Accordion>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-                tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean
-                pharetra eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula
-                tristique. Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget
-                accumsan tellus laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus
-                venenatis velit in ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac
-                sodales odio mauris et ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-              </p>
-            </Accordion>
+          </span>
+        </section>
+        <div className="accordion-container" ref={b}>
+          <div>
+            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
           </div>
-          <div className="accordion-container" ref={d}>
-            <div>
-              <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-            </div>
-            <Accordion>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-                tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean
-                pharetra eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula
-                tristique. Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget
-                accumsan tellus laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus
-                venenatis velit in ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac
-                sodales odio mauris et ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-              </p>
-            </Accordion>
-          </div>
-          <div className="accordion-container">
-            <div>
-              <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-            </div>
-            <Accordion>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-                tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean
-                pharetra eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula
-                tristique. Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget
-                accumsan tellus laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus
-                venenatis velit in ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac
-                sodales odio mauris et ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-              </p>
-            </Accordion>
-          </div>
-          <div className="accordion-container">
-            <div>
-              <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-            </div>
-            <Accordion>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-                tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean
-                pharetra eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula
-                tristique. Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget
-                accumsan tellus laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus
-                venenatis velit in ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac
-                sodales odio mauris et ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-              </p>
-            </Accordion>
-          </div>
-          <section className="accordion-container">
-            <div>
-              <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-            </div>
-            <Accordion>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-                tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean
-                pharetra eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula
-                tristique. Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget
-                accumsan tellus laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus
-                venenatis velit in ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac
-                sodales odio mauris et ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-              </p>
-            </Accordion>
-          </section>
-          <section className="accordion-container" ref={setRef}>
-            <div>
-              <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-            </div>
-            <Accordion>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-                tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean
-                pharetra eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula
-                tristique. Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget
-                accumsan tellus laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus
-                venenatis velit in ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac
-                sodales odio mauris et ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-              </p>
-            </Accordion>
-          </section>
+          <Accordion>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
+              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
+              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
+              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
+              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
+              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
+              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
+            </p>
+          </Accordion>
         </div>
-        <aside>
-          <nav className="nav-section">
-            <ul>
-              <li id="nav_1" style={liVisibility} className={visible ? "nav-item" : ""}>
-                <span>
-                  <a href="#algorithms_TC" onClick={() => handleNavClick("a")}>
-                    Algorithms time complexity
-                  </a>
-                </span>
-              </li>
-              <li id="nav_2" style={liVisibility}>
-                <span>
-                  <a href="#data_structures_big-o" onClick={() => handleNavClick("b")}>
-                    Data structures Big-O
-                  </a>
-                </span>
-              </li>
-              <li id="nav_3" style={liVisibility}>
-                <span>
-                  <a href="#array_operations_tc" onClick={() => handleNavClick("c")}>
-                    Array operations TC
-                  </a>
-                </span>
-              </li>
-              <li id="nav_4" style={liVisibility}>
-                <span>
-                  <a href="#big_o_notation" onClick={() => handleNavClick("d")}>
-                    Big O notation
-                  </a>
-                </span>
-              </li>
-            </ul>
-          </nav>
-        </aside>
-      </main>
-
-      <footer>
-        <h1>HI this is footer</h1>
-        {/* <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a> */}
-      </footer>
+        {/* TEST ONLY */}
+        <section className="accordion-container">
+          <div>
+            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
+          </div>
+          <Accordion>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
+              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
+              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
+              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
+              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
+              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
+              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
+            </p>
+          </Accordion>
+        </section>
+        <div className="accordion-container" ref={c}>
+          <div>
+            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
+          </div>
+          <Accordion>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
+              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
+              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
+              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
+              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
+              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
+              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
+            </p>
+          </Accordion>
+        </div>
+        <div className="accordion-container" ref={d}>
+          <div>
+            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
+          </div>
+          <Accordion>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
+              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
+              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
+              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
+              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
+              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
+              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
+            </p>
+          </Accordion>
+        </div>
+        <div className="accordion-container">
+          <div>
+            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
+          </div>
+          <Accordion>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
+              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
+              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
+              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
+              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
+              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
+              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
+            </p>
+          </Accordion>
+        </div>
+        <div className="accordion-container">
+          <div>
+            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
+          </div>
+          <Accordion>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
+              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
+              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
+              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
+              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
+              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
+              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
+            </p>
+          </Accordion>
+        </div>
+        <section className="accordion-container">
+          <div>
+            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
+          </div>
+          <Accordion>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
+              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
+              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
+              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
+              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
+              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
+              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
+            </p>
+          </Accordion>
+        </section>
+        <section className="accordion-container" ref={setRef}>
+          <div>
+            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
+          </div>
+          <Accordion>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
+              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
+              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
+              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
+              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
+              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
+              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
+            </p>
+          </Accordion>
+        </section>
+      </div>
+      <aside>
+        <nav className="nav-section">
+          <ul>
+            <li id="nav_1" style={liVisibility} className={visible ? "nav-item" : ""}>
+              <span>
+                <a href="#algorithms_TC" onClick={() => handleNavClick("a")}>
+                  Algorithms time complexity
+                </a>
+              </span>
+            </li>
+            <li id="nav_2" style={liVisibility}>
+              <span>
+                <a href="#data_structures_big-o" onClick={() => handleNavClick("b")}>
+                  Data structures Big-O
+                </a>
+              </span>
+            </li>
+            <li id="nav_3" style={liVisibility}>
+              <span>
+                <a href="#array_operations_tc" onClick={() => handleNavClick("c")}>
+                  Array operations TC
+                </a>
+              </span>
+            </li>
+            <li id="nav_4" style={liVisibility}>
+              <span>
+                <a href="#big_o_notation" onClick={() => handleNavClick("d")}>
+                  Big O notation
+                </a>
+              </span>
+            </li>
+          </ul>
+        </nav>
+      </aside>
     </div>
   );
 }

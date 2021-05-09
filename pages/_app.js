@@ -15,5 +15,15 @@ export default function App({ Component, pageProps }) {
     };
   }, [router.events]);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <h2>
+        here will be my info links/nav ,note:make about me text render in with spring animations(like i did for %
+        finished on zip gallery)
+      </h2>
+      <main className="main-container">
+        <Component {...pageProps} />
+      </main>
+    </>
+  );
 }
