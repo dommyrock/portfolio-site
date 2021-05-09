@@ -5,10 +5,11 @@ import { faVuejs, faReact, faJsSquare, faAws, faTwitter, faFacebookSquare } from
 import Image from "next/image";
 import { useState, createRef } from "react";
 import useElementObserver from "../hooks/useElementObserver";
+import SocialsContainer from "../components/SocialsContainer";
 
 //https://fontawesome.com/icons?d=gallery&p=2&s=brands&m=free
 //icons react docs https://fontawesome.com/how-to-use/on-the-web/using-with/react
-
+//css glass morpg socials ;https://www.youtube.com/watch?v=yh6lyefeUKc&list=WL&index=47
 export default function Home() {
   //From sidenav i call scroll on <section> refs, I'm also observing those same refs for when to show (remove hidden attr)side nav items
   const [[a, b, c, d]] = useState(() => [...Array(4)].map(createRef));
@@ -37,6 +38,7 @@ export default function Home() {
   return (
     <div className="home-container">
       {/* <LinkedinEmbed /> Has some css leaks into global css   (solution is shadow dom)*/}
+      <SocialsContainer />
       <div>
         <section className="accordion-container" ref={a}>
           <div>

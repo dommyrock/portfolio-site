@@ -26,7 +26,7 @@ body {
 }
 .home-container {
   display: grid;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 20% 60% 20%;
   justify-items: center;
   gap: 10px;
 }
@@ -102,6 +102,41 @@ option2  https://codepen.io/esse/pen/qxmqPQ*/
 .nav-item span:nth-of-type(2)::before,
 .nav-item span:nth-of-type(2)::after {
   animation-delay: 0.7s;
+}
+
+/* Social media container  */
+.socials-container {
+  padding: 0px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+  list-style-type: none;
+}
+.socials-container li {
+  float: left;
+  margin-left: 10px;
+  padding-right: 10px;
+}
+.socials-container svg:hover {
+  color: var(--text-lightgrey);
+}
+
+/* Scrollbar css */
+body::-webkit-scrollbar {
+  width: 0.8em;
+  background-color: var(--default-text-grey);
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--bg-colorDark);
+  border: 1px solid var(--bg-colorDark);
+  border-radius: 5px;
 }
 
 @keyframes a-ltr-after {
