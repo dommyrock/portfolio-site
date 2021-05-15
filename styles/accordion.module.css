@@ -21,7 +21,7 @@
 
 .accordion {
   background: #eeeeee;
-  border-radius: 30px;
+  border-radius: 20px;
   overflow: hidden;
   position: relative;
   padding-bottom: 30px;
@@ -34,4 +34,35 @@
   background: linear-gradient(to bottom, rgba(238, 238, 238, 0) 0%, rgba(238, 238, 238, 0.85) 100%);
   position: absolute;
   bottom: 0;
+}
+
+/* AnimatedDivCss */
+.projects_wrapper {
+  width: 900px;
+  height: 900px;
+  /* background: lightblue; */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 25px;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.05);
+  will-change: width, height;
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 5px;
+  will-change: transform, opacity;
 }

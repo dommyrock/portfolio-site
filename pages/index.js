@@ -6,16 +6,22 @@ import Image from "next/image";
 import { useState, createRef } from "react";
 import useElementObserver from "../hooks/useElementObserver";
 import SocialsContainer from "../components/SocialsContainer";
+import AnimatedDivContainer from "../components/AnimatedDivContainer";
 
 //https://fontawesome.com/icons?d=gallery&p=2&s=brands&m=free
 //icons react docs https://fontawesome.com/how-to-use/on-the-web/using-with/react
 //css glass morpg socials ;https://www.youtube.com/watch?v=yh6lyefeUKc&list=WL&index=47
+
+//Ideas: https://codepen.io/kinsomicrote/pen/bybjKg
+// drop socials icons from top 1by 1 with react sping , or animate on hover, also snimate in About me ....
 export default function Home() {
   //From sidenav i call scroll on <section> refs, I'm also observing those same refs for when to show (remove hidden attr)side nav items
   const [[a, b, c, d]] = useState(() => [...Array(4)].map(createRef));
   //new
   const [setRef, visible] = useElementObserver({ threshold: 0.2 });
   //TODO: this hooks works , integrate it somehow so i track each <section ref and render nav item to screen
+  //FOward abcd refs to https://stackoverflow.com/questions/53561913/react-forwarding-multiple-refs
+  //https://reactjs.org/docs/hooks-reference.html#useimperativehandle better solution thaan above link
   function handleNavClick(key) {
     switch (key) {
       case "a":
@@ -37,15 +43,17 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      {/* <LinkedinEmbed /> Has some css leaks into global css   (solution is shadow dom)*/}
-      <SocialsContainer />
-      <div>
-        <section className="accordion-container" ref={a}>
+      <div id="socials_container">
+        {/* <LinkedinEmbed /> Has some css leaks into global css   (solution is shadow dom)*/}
+        <SocialsContainer />
+      </div>
+      <div id="accordion_container" className="accordion-container">
+        <section ref={a}>
           <div>
             <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
           </div>
           <Accordion>
-            <p>
+            <p className="unselectable">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
               tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
               eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
@@ -69,24 +77,9 @@ export default function Home() {
             </Accordion>
           </span>
         </section>
-        <div className="accordion-container" ref={b}>
-          <div>
-            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-          </div>
-          <Accordion>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
-              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
-              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
-              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
-              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
-              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-            </p>
-          </Accordion>
-        </div>
+
         {/* TEST ONLY */}
-        <section className="accordion-container">
+        <section>
           <div>
             <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
           </div>
@@ -102,101 +95,11 @@ export default function Home() {
             </p>
           </Accordion>
         </section>
-        <div className="accordion-container" ref={c}>
-          <div>
-            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-          </div>
-          <Accordion>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
-              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
-              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
-              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
-              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
-              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-            </p>
-          </Accordion>
-        </div>
-        <div className="accordion-container" ref={d}>
-          <div>
-            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-          </div>
-          <Accordion>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
-              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
-              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
-              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
-              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
-              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-            </p>
-          </Accordion>
-        </div>
-        <div className="accordion-container">
-          <div>
-            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-          </div>
-          <Accordion>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
-              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
-              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
-              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
-              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
-              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-            </p>
-          </Accordion>
-        </div>
-        <div className="accordion-container">
-          <div>
-            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-          </div>
-          <Accordion>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
-              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
-              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
-              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
-              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
-              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-            </p>
-          </Accordion>
-        </div>
-        <section className="accordion-container">
-          <div>
-            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-          </div>
-          <Accordion>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
-              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
-              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
-              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
-              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
-              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-            </p>
-          </Accordion>
+        <section>
+          <AnimatedDivContainer />
         </section>
-        <section className="accordion-container" ref={setRef}>
-          <div>
-            <Image src="/icons/1.png" alt="project preview" layout="fixed" width={300} height={200} />
-          </div>
-          <Accordion>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at augue laoreet, eleifend turpis a,
-              tincidunt velit. Curabitur vitae felis sit amet arcu blandit pellentesque quis vitae odio. Aenean pharetra
-              eu felis non suscipit. Etiam fermentum enim sit amet magna scelerisque, eu mattis ligula tristique.
-              Aliquam sed cursus odio, sit amet condimentum eros. Proin molestie commodo urna, eget accumsan tellus
-              laoreet ut. Morbi id est eu lorem tempor cursus. Aenean vitae ultrices sem. Phasellus venenatis velit in
-              ultrices interdum. Cras semper, justo a maximus iaculis, nisl metus luctus nisl, ac sodales odio mauris et
-              ante. Donec ipsum est, auctor a lorem ac, rutrum elementum magna.
-            </p>
-          </Accordion>
+        <section ref={setRef}>
+          <AnimatedDivContainer />
         </section>
       </div>
       <aside>
