@@ -7,6 +7,7 @@ import { useState, createRef } from "react";
 import useElementObserver from "../hooks/useElementObserver";
 import SocialsContainer from "../components/SocialsContainer";
 import AnimatedDivContainer from "../components/AnimatedDivContainer";
+import AnimatedIcon from "../componens/AnimatedIcon";
 
 //https://fontawesome.com/icons?d=gallery&p=2&s=brands&m=free
 //icons react docs https://fontawesome.com/how-to-use/on-the-web/using-with/react
@@ -107,6 +108,7 @@ export default function Home() {
           <ul>
             <li id="nav_1" style={liVisibility} className={visible ? "nav-item" : ""}>
               <span>
+                <AnimatedIcon isVisible={visible} />
                 <a href="#algorithms_TC" onClick={() => handleNavClick("a")}>
                   Algorithms time complexity
                 </a>
