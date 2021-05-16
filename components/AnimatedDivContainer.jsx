@@ -54,10 +54,10 @@ export default function AnimatedDivContainer() {
   const { size, ...rest } = useSpring({
     ref: springApi,
     config: config.stiff,
-    from: { size: "20%", background: "hotpink" },
+    from: { size: "20%", background: "#6997ff" },
     to: {
       size: open ? "100%" : "20%",
-      background: open ? "white" : "hotpink",
+      background: open ? "white" : "#6997ff",
     },
   });
 

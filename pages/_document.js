@@ -21,7 +21,6 @@ export default class MyDocument extends Document {
           `,
             }}
           />
-          <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript" />
           {/* FONTS */}
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet" />
