@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { useTransition, useSpring, useChain, config, animated, useSpringRef } from "@react-spring/web";
 import styles from "../styles/accordion.module.css";
+import Image from "next/image";
 
 const data = [
   {
     name: "Rare Wind",
     description: "#a8edea → #fed6e3",
-    css: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
+    css: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
     height: 200,
+    text: "Image compression app",
+    src: "/zipGallery_QR.png",
   },
   {
     name: "Saint Petersburg",
@@ -16,27 +19,9 @@ const data = [
     height: 400,
   },
   {
-    name: "Perfect White",
-    description: "#fdfbfb → #ebedee",
-    css: "linear-gradient(135deg, #E3FDF5 0%, #FFE6FA 100%)",
-    height: 400,
-  },
-  {
     name: "Near Moon",
     description: "#5ee7df → #b490ca",
     css: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
-    height: 400,
-  },
-  {
-    name: "Wild Apple",
-    description: "#d299c2 → #fef9d7",
-    css: "linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)",
-    height: 200,
-  },
-  {
-    name: "Ladoga Bottom",
-    description: "#ebc0fd → #d9ded8",
-    css: "linear-gradient(135deg, #ebc0fd 0%, #d9ded8 100%)",
     height: 400,
   },
   {
@@ -82,7 +67,13 @@ export default function AnimatedDivContainer() {
       >
         {!open && <h2 style={{ color: "#fff", textAlign: "center" }}>Personal projects</h2>}
         {transition((style, item) => (
-          <animated.div className={styles.item} style={{ ...style, background: item.css }} />
+          <animated.div
+            className={styles.item}
+            style={{ ...style, background: item.css, display: "flex", justifyContent: "space-between" }}
+          >
+            <p>{item.text}</p>
+            {item.src && <Image src={item.src} layout="intrinsic" width={190} height={100} />}
+          </animated.div>
         ))}
       </animated.div>
     </div>

@@ -10,6 +10,8 @@ export default function useElementObserver(options) {
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       setVisible(entry.isIntersecting);
+      //append class to <nav <li (need switch to read entry.target.id so i know wich <li to target)
+      if (entry.isIntersecting) setNavClass(entry.target.id);
     }, options);
 
     if (ref) observer.observe(ref);
@@ -21,6 +23,20 @@ export default function useElementObserver(options) {
   }, [ref, options]);
 
   return [setRef, visible];
+}
+
+//helper
+function setNavClass(id) {
+  switch (id) {
+    case "section1":
+      document.getElementById("nav_1").classList.add("nav-item");
+      break;
+    case "section2":
+      document.getElementById("nav_2").classList.add("nav-item");
+      break;
+    default:
+      break;
+  }
 }
 
 //usage

@@ -56,6 +56,10 @@ section > div {
   justify-content: center;
 }
 
+#sideNav > li {
+  visibility: hidden;
+}
+
 .nav-section {
   position: -webkit-sticky;
   position: sticky;
@@ -64,9 +68,9 @@ section > div {
   color: var(--nav-textColor);
 }
 .nav-section li:hover {
-  color: aqua;
+  color: var(--arcticBlue);
 }
-/* Navbar css 
+/* Navbar css
 option2  https://codepen.io/esse/pen/qxmqPQ*/
 /* title styles */
 .nav-item span {
@@ -75,6 +79,7 @@ option2  https://codepen.io/esse/pen/qxmqPQ*/
   display: block;
   line-height: 1.2;
   visibility: visible;
+  padding-bottom: 0.3rem;
 }
 
 .nav-item span::after {
@@ -127,6 +132,8 @@ option2  https://codepen.io/esse/pen/qxmqPQ*/
 }
 .socials-container svg:hover {
   color: var(--text-lightgrey);
+  transform: scale(1.2, 1.2);
+  border-bottom: solid 2px var(--arcticBlue);
 }
 
 /* unselectable text */
@@ -174,6 +181,11 @@ body::-webkit-scrollbar-thumb {
   }
 }
 /* Mobile view */
+@media only screen and (max-width: 1205px) {
+  #navAside {
+    display: none;
+  }
+}
 @media (max-width: 680px) {
   .main-container {
     display: flex;
