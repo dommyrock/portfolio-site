@@ -138,6 +138,24 @@ option2  https://codepen.io/esse/pen/qxmqPQ*/
   transform: scale(1.2, 1.2);
   border-bottom: solid 2px var(--arcticBlue);
 }
+#company-header {
+  display: flex;
+  color: var(--bg-color);
+}
+#company-header h3 {
+  margin-top: 0;
+  margin: 0;
+  color: #fff;
+  text-decoration: underline 2px;
+}
+#company-header h5 {
+  margin-top: 0.5rem;
+  text-decoration: underline;
+  color: #fff;
+}
+#company-header span {
+  padding-left: 1rem;
+}
 
 /* unselectable text */
 .unselectable {

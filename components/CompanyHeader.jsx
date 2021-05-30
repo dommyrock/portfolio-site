@@ -1,19 +1,17 @@
-export default function CompanyHeader(props) {
+import { forwardRef } from "react";
+
+const CompanyHeader = forwardRef((props, ref) => {
   return (
-    <span>
-      <img
-        src="https://media-exp1.licdn.com/dms/image/C560BAQHgh8NxWVhSzg/company-logo_100_100/0/1579078366455?e=1630540800&v=beta&t=pLdddd7vyTszwrck2K49WN6I1-NiDtECLWMq-zQhzsg"
-        alt="project preview"
-        layout="fixed"
-        width={56}
-        height={56}
-      />
-      <h3>
-        {props.company},{props.role}
-      </h3>
-      <h5>{props.location}</h5>
-      <h5>{props.date}</h5>
-    </span>
+    <div id="company-header" ref={ref}>
+      <img src={props.logoSrc} alt="project preview" layout="fixed" width={56} height={56} />
+      <span>
+        <h3>
+          {props.company}, {props.role}, {props.location}
+        </h3>
+        <h5>{props.date}</h5>
+      </span>
+    </div>
   );
-}
-//TODO style this headerr component to be nicer :)
+});
+export default CompanyHeader;
+//forwared reff here so i have acces from index.js
