@@ -1,12 +1,22 @@
 import Accordion from "../components/shared/Accordian";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVuejs, faReact, faJsSquare, faAws, faTwitter, faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
+import {
+  faVuejs,
+  faReact,
+  faJsSquare,
+  faAws,
+  faTwitter,
+  faFacebookSquare,
+  faAccusoft,
+} from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
 import { useState, createRef } from "react";
 import useElementObserver from "../hooks/useElementObserver";
 import SocialsContainer from "../components/SocialsContainer";
 import AnimatedDivContainer from "../components/AnimatedDivContainer";
 import AnimatedIcon from "../components/AnimatedIcon";
+import { dotmetricsData, combisData } from "../components/data";
+import CompanyHeader from "../components/CompanyHeader";
 
 //https://fontawesome.com/icons?d=gallery&p=2&s=brands&m=free
 //icons react docs https://fontawesome.com/how-to-use/on-the-web/using-with/react
@@ -17,9 +27,12 @@ import AnimatedIcon from "../components/AnimatedIcon";
 //https://www.vectorlogo.zone/logos/graphql/index.html
 //https://www.vectorlogo.zone/logos/golang/index.html
 //https://www.vectorlogo.zone/logos/slack/index.html
+//https://www.vectorlogo.zone/logos/typescriptlang/index.html
 //FOward abcd refs to https://stackoverflow.com/questions/53561913/react-forwarding-multiple-refs
 //https://reactjs.org/docs/hooks-reference.html#useimperativehandle better solution thaan above link
 
+//cool breathing dots
+//https://codesandbox.io/s/62ocm?file=/src/index.js
 export default function Home() {
   //SECTION REFS
   const [[a, b, c, d]] = useState(() => [...Array(4)].map(createRef));
@@ -115,6 +128,44 @@ export default function Home() {
             </div>
           </Accordion>
         </section>
+        {/* Render /animate in text for this section , tan render workd data dynamicaly from data.js file*/}
+        <section id="about-me"></section>
+        <section id="combis"></section>
+        <CompanyHeader {...dotmetricsData} />
+        <section id="dotmetrics">
+          {dotmetricsData.projects.map((x) => (
+            <>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10rem"
+                  color="#6997ff94"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <Accordion>
+                <div>
+                  {x.text}
+                  <br /> <div style={{ textAlign: "center", borderBottom: "3px solid #cccccc7d" }}>Detais</div>
+                  {x.details}
+                </div>
+              </Accordion>
+            </>
+          ))}
+        </section>
+        <section id="personal-proj"></section>
+        <section id="my-intrests"></section>
+        <section id="how-i-learn"></section>
         <section id="section1" ref={setRef}>
           <AnimatedDivContainer />
         </section>

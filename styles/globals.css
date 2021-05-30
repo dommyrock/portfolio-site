@@ -53,7 +53,8 @@ section > div {
 .accordion-container section {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 900px;
 }
 
 #sideNav > li {
@@ -69,6 +70,8 @@ section > div {
 }
 .nav-section li:hover {
   color: var(--arcticBlue);
+  /* cursor: -webkit-grab; didnt show up for some reason 
+  cursor: grab; */
 }
 /* Navbar css
 option2  https://codepen.io/esse/pen/qxmqPQ*/
