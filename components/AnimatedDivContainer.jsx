@@ -2,35 +2,7 @@ import React, { useState } from "react";
 import { useTransition, useSpring, useChain, config, animated, useSpringRef } from "@react-spring/web";
 import styles from "../styles/accordion.module.css";
 import Image from "next/image";
-
-const data = [
-  {
-    name: "Rare Wind",
-    description: "#a8edea → #fed6e3",
-    css: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
-    height: 200,
-    text: "Image compression app",
-    src: "/zipGallery_QR.png",
-  },
-  {
-    name: "Saint Petersburg",
-    description: "#f5f7fa → #c3cfe2",
-    css: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
-    height: 400,
-  },
-  {
-    name: "Near Moon",
-    description: "#5ee7df → #b490ca",
-    css: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
-    height: 400,
-  },
-  {
-    name: "New York",
-    description: " #fff1eb → #ace0f9",
-    css: "linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%)",
-    height: 400,
-  },
-];
+import { personalProj_data as data } from "../data";
 
 export default function AnimatedDivContainer() {
   const [open, set] = useState(false);
@@ -71,7 +43,9 @@ export default function AnimatedDivContainer() {
             className={styles.item}
             style={{ ...style, background: item.css, display: "flex", justifyContent: "space-between" }}
           >
-            <p>{item.text}</p>
+            <a href={item.link} target="_blank" rel="noopener noreferrer">
+              <p>{item.text}</p>
+            </a>
             {item.src && <Image src={item.src} layout="intrinsic" width={190} height={100} />}
           </animated.div>
         ))}

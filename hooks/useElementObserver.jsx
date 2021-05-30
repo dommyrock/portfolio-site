@@ -28,18 +28,18 @@ export default function useElementObserver(options) {
 //helper
 function setNavClass(id) {
   switch (id) {
-    case "about-me":
+    case "section1":
       document.getElementById("nav_1").classList.add("nav-item");
       break;
     case "section2":
       document.getElementById("nav_2").classList.add("nav-item");
       break;
-    case "section2":
-      document.getElementById("nav_3").classList.add("nav-item");
-      break;
-    case "section2":
-      document.getElementById("nav_4").classList.add("nav-item");
-      break;
+    // case "section2":
+    //   document.getElementById("nav_3").classList.add("nav-item");
+    //   break;
+    // case "section2":
+    //   document.getElementById("nav_4").classList.add("nav-item");
+    //   break;
     default:
       break;
   }

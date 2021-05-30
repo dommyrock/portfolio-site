@@ -33,7 +33,7 @@ export const combisData = {
     },
     {
       date: "November 2020.",
-      text: `•Bussiness process Workflow execution through Ms Teams Bot Framework`,
+      text: `•Bussiness process Workflow execution through Chatbot`,
       src: "teams",
       details: `•Integrated company workflow and process execution through MS Teams App with MS Bot Framework Api, MS Graph Api and custom Api that notified Teams chatbot about events inside company CRM. 
       Chatbot received passed data and sent specific empoyee adaptive UI card which enabled them to excute workflow through chat message UI
@@ -61,7 +61,7 @@ export const combisData = {
     },
     {
       date: "November 2019 -present.",
-      text: `Other smaller projects`,
+      text: `Other projects`,
       details: `
       •Refactored and extended existing company finanance/ROI graphs and dashboards.
       •Developed internal App, Chron jobs for managing employees Multisport cards, I had full project ownership and constant communication with the PM and testing team.
@@ -110,3 +110,31 @@ export const dotmetricsData = {
     },
   ],
 };
+
+export const personalProj_data = [
+  {
+    description: "#a8edea → #fed6e3",
+    css: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
+    text: "Image compression app",
+    src: "/zipGallery_QR.png",
+    link: "https://zip-gallery.vercel.app",
+  },
+  {
+    description: "#f5f7fa → #c3cfe2",
+    css: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
+    text: "Github personal site (built on: static pages)",
+    src: "/gitHubPersonal_QR.png",
+    link: "https://dommyrock.github.io/gh-deploy/#",
+  },
+  {
+    description: "#5ee7df → #b490ca",
+    css: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
+    text: "Job search App",
+    src: "/nextJob_QR.png",
+    link: "https://next-job.vercel.app",
+  },
+  {
+    description: " #fff1eb → #ace0f9",
+    css: "linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%)",
+  },
+];

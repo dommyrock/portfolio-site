@@ -6,7 +6,7 @@ import useElementObserver from "../hooks/useElementObserver";
 import SocialsContainer from "../components/SocialsContainer";
 import AnimatedDivContainer from "../components/AnimatedDivContainer";
 import AnimatedIcon from "../components/AnimatedIcon";
-import { dotmetricsData, combisData } from "../components/data";
+import { dotmetricsData, combisData } from "../data";
 import CompanyHeader from "../components/CompanyHeader";
 
 //https://fontawesome.com/icons?d=gallery&p=2&s=brands&m=free
@@ -28,6 +28,7 @@ import CompanyHeader from "../components/CompanyHeader";
 //TODO
 /* 
 1 group smaller refactors , projects into since row 
+2 extract stack items into separate component where i map stac items to icons,svg,imgs list 
 
 */
 export default function Home() {
@@ -179,7 +180,7 @@ export default function Home() {
             </>
           ))}
         </section>
-        <section id="personal-proj" ref={setRef}>
+        <section id="section1" ref={setRef}>
           <AnimatedDivContainer />
         </section>
         <section id="section2" ref={setRef2}>
