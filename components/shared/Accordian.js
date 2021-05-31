@@ -7,7 +7,6 @@ import style from "../../styles/accordion.module.css";
 
 const Accordion = ({ children, isStackItem }) => {
   const defaultHeight = !isStackItem ? "180px" : "50px";
-
   // Manages the open or cloased state of the accordion
   const [open, toggle] = useState(false);
 
@@ -34,6 +33,7 @@ const Accordion = ({ children, isStackItem }) => {
   });
   const maxWidth = {
     maxWidth: isStackItem ? "200px" : "500px",
+    minWidth: isStackItem ? "200px" : 0,
   };
 
   useEffect(() => {

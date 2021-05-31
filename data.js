@@ -23,13 +23,14 @@ export const combisData = {
     "Postman",
     "Ngrok",
   ],
+  dayTdayTasks: "",
   projects: [
     {
       date: "February 2021.",
       text: `•Fixed a business critical bug where there were 2x async workflows triggered by the same event trying to update current and related entities with race conditions by combining racing code into single WF.
       •Refactored and asynchronized company global javascripts for data fetching and manipulation to the ES6+ standard.`,
       details: "",
-      stack: [],
+      stack: ["C#", "js"],
     },
     {
       date: "November 2020.",
@@ -38,7 +39,7 @@ export const combisData = {
       details: `•Integrated company workflow and process execution through MS Teams App with MS Bot Framework Api, MS Graph Api and custom Api that notified Teams chatbot about events inside company CRM. 
       Chatbot received passed data and sent specific empoyee adaptive UI card which enabled them to excute workflow through chat message UI
       •My job was also to setup and introduce testing environment for more junior devs to help with further development.`,
-      stack: [".netcore", "msGraph", "msBotFramework", "rest", "ngrok", "postman"],
+      stack: ["C#", "msGraph", "msBotFramework", "azure", "rest", "ngrok", "postman"],
     },
     {
       date: "October 2020.",
@@ -46,7 +47,7 @@ export const combisData = {
       src: "ticket",
       details: `•Developed and deployed ticketing API and  frontend for reporting employee problems with work equipment or any other work related problems through custom dashboard made in Vue.js.
         All reported problems were also psoted to existing company CRM Platform, personalized data was dynamically pulled from API for each employee`,
-      stack: [".netCore", "sql", "vue", "rest", "html", "css"],
+      stack: ["C#", "sql", "vue", "rest", "html", "css"],
     },
     {
       date: "Match-August 2020.",
@@ -57,19 +58,19 @@ export const combisData = {
        Also helped team in making a custom component library for this api, my job was also to connect Vue compoenents to the file share API.
        •Developed filewatcher service for file backup before being  uploaded to sharepoint in case of file-share Api failiure.
        `,
-      stack: [".netCore", "hangfire", "postman", "vue", "js", "css"],
+      stack: ["c#", "hangfire", "postman", "vue", "js", "css"],
     },
     {
       date: "November 2019 -present.",
       text: `Other projects`,
       details: `
       •Refactored and extended existing company finanance/ROI graphs and dashboards.
-      •Developed internal App, Chron jobs for managing employees Multisport cards, I had full project ownership and constant communication with the PM and testing team.
+      •Developed internal App, Chron jobs for managing employees Multisport cards. I had full project ownership and constant communication with the PM and testing team.
       •Developed new dashboard for empoye equipement tracking.
       •Architected, developed & deployed Chron job for pushing project reminders to employees.
      •Migrated,refactored and redeployed on Premise web components for employee work hours time tracking & logging into Cloud version(Dynamics 365).
      •Mentored/helped onboard new engineer (mostly in C#, JS debugging and unit testing).`,
-      stack: [".netCore", "sql", "c#", "hangfire", "postman", "vue", "js", "css"],
+      stack: ["C#", "sql", , "hangfire", "postman", "vue", "js", "css"],
     },
   ],
 };
@@ -95,6 +96,7 @@ export const dotmetricsData = {
     "Fiddler",
     "Git",
   ],
+  dayTdayTasks: "",
   projects: [
     {
       text: `Web extension API`,
@@ -106,7 +108,7 @@ export const dotmetricsData = {
     I created a Windows forms chat application in .NET Framework 4.6.1 using ZeroMQ library.
     Where clien (REQ Zsocket) sends messages to server(REP Zsocket) over TCP. Later I updated that project to Router-Dealer Z-sockets so that multiple clients can talk asynchronously to a single server.
     •RnD and main platform development & maintenance.`,
-      stack: [".net", "c#", "sql", "react", "fidler", "js", "css"],
+      stack: [".net", "C#", "sql", "react", "fidler", "js", "css"],
     },
   ],
 };

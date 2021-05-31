@@ -1,6 +1,6 @@
 import Accordion from "../components/shared/Accordian";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVuejs, faReact, faJsSquare, faAws } from "@fortawesome/free-brands-svg-icons";
+import { faVuejs, faReact, faJsSquare, faAws, faHtml5, faCss3 } from "@fortawesome/free-brands-svg-icons";
 import { useState, createRef } from "react";
 import useElementObserver from "../hooks/useElementObserver";
 import SocialsContainer from "../components/SocialsContainer";
@@ -8,22 +8,14 @@ import AnimatedDivContainer from "../components/AnimatedDivContainer";
 import AnimatedIcon from "../components/AnimatedIcon";
 import { dotmetricsData, combisData } from "../data";
 import CompanyHeader from "../components/CompanyHeader";
+import { Azure, Go, Graphql, Slack, Typescript } from "../components/svgs/svgSheet";
 
 //https://fontawesome.com/icons?d=gallery&p=2&s=brands&m=free
 //icons react docs https://fontawesome.com/how-to-use/on-the-web/using-with/react
 
 //OTHER gql,cloud provider svfs here
-//https://www.vectorlogo.zone/logos/microsoft_azure/index.html
-//https://www.vectorlogo.zone/logos/dotnet/index.html
-//https://www.vectorlogo.zone/logos/graphql/index.html
-//https://www.vectorlogo.zone/logos/golang/index.html
-//https://www.vectorlogo.zone/logos/slack/index.html
-//https://www.vectorlogo.zone/logos/typescriptlang/index.html
 //FOward abcd refs to https://stackoverflow.com/questions/53561913/react-forwarding-multiple-refs
 //https://reactjs.org/docs/hooks-reference.html#useimperativehandle better solution thaan above link
-
-//cool breathing dots
-//https://codesandbox.io/s/62ocm?file=/src/index.js
 
 //TODO
 /* 
@@ -35,7 +27,7 @@ export default function Home() {
   //SECTION REFS
   const [[about, cmbs, dotm, personalProj]] = useState(() => [...Array(4)].map(createRef));
   //ALSO SECTION REFS
-  const [setRef, visible] = useElementObserver({ threshold: 0.2 }); ///TODO REMOVE A B C D REFS , AND RETURN THEM FROM USE-ELEMENT OBSERVER (OR FOWARD REF FROM LIST<DIV> THAT CONTAIN ACCORDION DATA)
+  const [setRef, visible] = useElementObserver({ threshold: 0.2 });
   const [setRef2, visible2] = useElementObserver({ threshold: 0.2 });
 
   function handleNavClick(key) {
@@ -56,7 +48,34 @@ export default function Home() {
         break;
     }
   }
-
+  function createAcordionChild(stackItem) {
+    const item = stackItem;
+    debugger;
+    switch (stackItem) {
+      case "js":
+        return <FontAwesomeIcon icon={faJsSquare} title="javascript" size="2x" color="#f2e018" />;
+      case "react":
+        return <FontAwesomeIcon icon={faReact} title="react.js" size="2x" color="#4b8bced6" spin />;
+      case "vue":
+        return <FontAwesomeIcon icon={faVuejs} title="vue.js" size="2x" color="#179c23" />;
+      case "aws":
+        return <FontAwesomeIcon icon={faAws} title="amazon web services" size="2x" color="#f28c18" />;
+      case "html":
+        return <FontAwesomeIcon icon={faHtml5} title="html5" size="2x" color="#f28c18" />;
+      case "css":
+        return <FontAwesomeIcon icon={faCss3} title="css3" size="2x" color="#f28c18" />;
+      case "azure":
+        return <Azure />;
+      case "go":
+        return <Go />;
+      case "typescript":
+        return <Typescript />;
+      case "graphql":
+        return <Graphql />;
+      default:
+        return <h3 id="acordionstack-items">{stackItem}</h3>;
+    }
+  }
   const filterProjectSrc = (key) => {
     switch (key) {
       case "teams":
@@ -134,15 +153,8 @@ export default function Home() {
               <span>
                 <h4 style={{ margin: 0, color: "var(--bg-color)" }}>{x.date}</h4>
                 <h4 style={{ margin: 0, color: "var(--arcticBlue)" }}>Tech stack</h4>
-                <Accordion isStackItem={true}>
-                  <FontAwesomeIcon icon={faVuejs} size="2x" color="#179c23" />
-                  <FontAwesomeIcon icon={faReact} size="2x" color="#4b8bced6" spin />
-                  <FontAwesomeIcon icon={faJsSquare} size="2x" color="#f2e018" />
-                  <FontAwesomeIcon icon={faAws} size="2x" color="#f28c18" />
-                  <FontAwesomeIcon icon={faVuejs} size="2x" color="#179c23" />
-                  <FontAwesomeIcon icon={faReact} size="2x" color="#4b8bced6" spin />
-                  <FontAwesomeIcon icon={faJsSquare} size="2x" color="#f2e018" />
-                  <FontAwesomeIcon icon={faAws} size="2x" color="#f28c18" />
+                <Accordion stackItems={x.stack} isStackItem={true}>
+                  {x.stack.map((x) => createAcordionChild(x))}
                 </Accordion>
               </span>
             </>

@@ -156,7 +156,15 @@ option2  https://codepen.io/esse/pen/qxmqPQ*/
 #company-header span {
   padding-left: 1rem;
 }
-
+#acordionstack-items {
+  color: var(--arcticBlue);
+  margin: 0;
+  display: inline-block;
+  padding-right: 3px;
+  border: 2px solid #ccc;
+  /* border-style: dashed; */
+  border-radius: 5px;
+}
 /* unselectable text */
 .unselectable {
   -webkit-touch-callout: none;
