@@ -176,7 +176,7 @@ option2  https://codepen.io/esse/pen/qxmqPQ*/
   user-select: none;
 }
 .underline-highlight {
-  background: linear-gradient(to top, rgba(255, 255, 0, 0.384) 30%, transparent 30%);
+  background: linear-gradient(0deg, rgb(0 126 255 / 19%) 30%, transparent 0);
   width: fit-content;
 }
 

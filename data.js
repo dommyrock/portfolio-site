@@ -117,14 +117,14 @@ export const personalProj_data = [
   {
     description:
       "App is made in React.js to help me with mass image compression and zipping into single file.\nAnd was opportunity to experiment with react-spring physics based animations.",
-    css: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
+    css: "linear-gradient(135deg, #fff 0%, rgb(195, 207, 226) 100%)",
     text: "Image compression app",
     src: "/zipGallery_QR.png",
     link: "https://zip-gallery.vercel.app",
   },
   {
     description: "Older web App where i experimented with react and github static pages hosting\n",
-    css: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
+    css: "linear-gradient(135deg, #fff 0%, rgb(195, 207, 226) 100%)",
     text: "Github personal site",
     src: "/gitHubPersonal_QR.png",
     link: "https://dommyrock.github.io/gh-deploy/#",
@@ -132,16 +132,16 @@ export const personalProj_data = [
   {
     description:
       "In progress - Web app currently under development to help with job search.\nFrontend is made with React.js, deployed to Vercel.\nBacked is hosted on aws, indexing is done with Elasticsearch and Web Crawling is done in C#",
-    css: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
+    css: "linear-gradient(135deg, #fff 0%, rgb(195, 207, 226) 100%)",
     text: "Job search App",
     src: "/nextJob_QR.png",
-    link: "https:/\next-job.vercel.app",
+    link: "https://next-job.vercel.app/",
   },
   {
     description: "My github repo\n",
     css: "linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%)",
     text: "Other projects",
     src: "/ghRepo_QR.png",
-    link: "https:/\next-job.vercel.app",
+    link: "https://github.com/dommyrock",
   },
 ];
