@@ -43,9 +43,30 @@ export default function AnimatedDivContainer() {
             className={styles.item}
             style={{ ...style, background: item.css, display: "flex", justifyContent: "space-between" }}
           >
-            <a href={item.link} target="_blank" rel="noopener noreferrer">
-              <p>{item.text}</p>
+            <a id="external-proj-link" href={item.link} target="_blank" rel="noopener noreferrer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="2rem"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
             </a>
+            <div style={{ maxWidth: "500px", width: "100%" }}>
+              <p class="underline-highlight">{item.text}</p>
+              <br /> <div style={{ textAlign: "center", borderBottom: "3px solid #cccccc7d" }}>Detais</div>
+              {item.description.split(/\r?\n/).map((line) => (
+                <p style={{ margin: 0, paddingTop: "0.3rem" }}>{line}</p>
+              ))}
+            </div>
             {item.src && <Image src={item.src} layout="intrinsic" width={190} height={100} />}
           </animated.div>
         ))}

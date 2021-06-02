@@ -34,7 +34,7 @@ export const combisData = {
     },
     {
       date: "November 2020.",
-      text: `•Bussiness process Workflow execution through Chatbot`,
+      text: `•Bussiness process Workflow execution/automation through Chatbot`,
       src: "teams",
       details: `•Integrated company workflow and process execution through MS Teams App with MS Bot Framework Api, MS Graph Api and custom Api that notified Teams chatbot about events inside company CRM. 
       Chatbot received passed data and sent specific empoyee adaptive UI card which enabled them to excute workflow through chat message UI
@@ -115,28 +115,33 @@ export const dotmetricsData = {
 
 export const personalProj_data = [
   {
-    description: "#a8edea → #fed6e3",
-    css: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
+    description:
+      "App is made in React.js to help me with mass image compression and zipping into single file.\nAnd was opportunity to experiment with react-spring physics based animations.",
+    css: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
     text: "Image compression app",
     src: "/zipGallery_QR.png",
     link: "https://zip-gallery.vercel.app",
   },
   {
-    description: "#f5f7fa → #c3cfe2",
+    description: "Older web App where i experimented with react and github static pages hosting\n",
     css: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
-    text: "Github personal site (built on: static pages)",
+    text: "Github personal site",
     src: "/gitHubPersonal_QR.png",
     link: "https://dommyrock.github.io/gh-deploy/#",
   },
   {
-    description: "#5ee7df → #b490ca",
-    css: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
+    description:
+      "In progress - Web app currently under development to help with job search.\nFrontend is made with React.js, deployed to Vercel.\nBacked is hosted on aws, indexing is done with Elasticsearch and Web Crawling is done in C#",
+    css: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
     text: "Job search App",
     src: "/nextJob_QR.png",
-    link: "https://next-job.vercel.app",
+    link: "https:/\next-job.vercel.app",
   },
   {
-    description: " #fff1eb → #ace0f9",
+    description: "My github repo\n",
     css: "linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%)",
+    text: "Other projects",
+    src: "/ghRepo_QR.png",
+    link: "https:/\next-job.vercel.app",
   },
 ];

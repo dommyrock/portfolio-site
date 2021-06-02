@@ -127,6 +127,7 @@ option2  https://codepen.io/esse/pen/qxmqPQ*/
   top: 2rem;
   align-self: start;
   list-style-type: none;
+  z-index: 10;
 }
 .socials-container li {
   float: left;
@@ -173,6 +174,10 @@ option2  https://codepen.io/esse/pen/qxmqPQ*/
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.underline-highlight {
+  background: linear-gradient(to top, rgba(255, 255, 0, 0.384) 30%, transparent 30%);
+  width: fit-content;
 }
 
 /* Scrollbar css */

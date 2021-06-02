@@ -65,7 +65,8 @@
   background: white;
   border-radius: 5px;
   will-change: transform, opacity;
-  padding: 0.7em;
+  padding: 0.5em;
+  margin-bottom: 0.3rem;
 }
 .item img {
   border-radius: 0;
