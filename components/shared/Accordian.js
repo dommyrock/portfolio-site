@@ -37,14 +37,17 @@ const Accordion = ({ children, isStackItem }) => {
   };
 
   useEffect(() => {
+    //add margin to height
+    let alteredHeight = height + 20;
+    debugger;
     //Sets initial height
-    setContentHeight(height);
+    setContentHeight(alteredHeight);
 
     //Adds resize event listener
-    window.addEventListener("resize", setContentHeight(height));
+    window.addEventListener("resize", setContentHeight(alteredHeight));
 
     // Clean-up
-    return window.removeEventListener("resize", setContentHeight(height));
+    return window.removeEventListener("resize", setContentHeight(alteredHeight));
   }, [height]);
 
   return (

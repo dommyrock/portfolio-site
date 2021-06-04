@@ -19,6 +19,7 @@ import { Azure, Go, Graphql, Slack, Typescript } from "../components/svgs/svgShe
 
 //TODO
 /* 
+0 render in allsections immediately so usr can auto skip, only track icon animation show hide ,image on left static + about, indcate popout box is clickable
 1 group smaller refactors , projects into since row 
 2 extract stack items into separate component where i map stac items to icons,svg,imgs list 
 
@@ -50,7 +51,6 @@ export default function Home() {
   }
   function createAcordionChild(stackItem) {
     const item = stackItem;
-    debugger;
     switch (stackItem) {
       case "js":
         return <FontAwesomeIcon icon={faJsSquare} title="javascript" size="2x" color="#f2e018" />;

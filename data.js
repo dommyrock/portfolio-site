@@ -34,7 +34,7 @@ export const combisData = {
     },
     {
       date: "November 2020.",
-      text: `•Bussiness process Workflow execution/automation through Chatbot`,
+      text: `Bussiness process Workflow execution/automation through Chatbot`,
       src: "teams",
       details: `•Integrated company workflow and process execution through MS Teams App with MS Bot Framework Api, MS Graph Api and custom Api that notified Teams chatbot about events inside company CRM. 
       Chatbot received passed data and sent specific empoyee adaptive UI card which enabled them to excute workflow through chat message UI
@@ -43,7 +43,7 @@ export const combisData = {
     },
     {
       date: "October 2020.",
-      text: `•Company internal ticketing system`,
+      text: `Company internal ticketing system`,
       src: "ticket",
       details: `•Developed and deployed ticketing API and  frontend for reporting employee problems with work equipment or any other work related problems through custom dashboard made in Vue.js.
         All reported problems were also psoted to existing company CRM Platform, personalized data was dynamically pulled from API for each employee`,

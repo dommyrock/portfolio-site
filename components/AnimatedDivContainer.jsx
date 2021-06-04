@@ -61,7 +61,9 @@ export default function AnimatedDivContainer() {
               </svg>
             </a>
             <div style={{ maxWidth: "500px", width: "100%" }}>
-              <p class="underline-highlight">{item.text}</p>
+              <a href={item.link} target="_blank" rel="noopener noreferrer">
+                <p class="underline-highlight">{item.text}</p>
+              </a>
               <br /> <div style={{ textAlign: "center", borderBottom: "3px solid #cccccc7d" }}>Detais</div>
               {item.description.split(/\r?\n/).map((line) => (
                 <p style={{ margin: 0, paddingTop: "0.3rem" }}>{line}</p>
