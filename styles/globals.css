@@ -60,6 +60,9 @@ section > div {
 #sideNav > li {
   visibility: hidden;
 }
+#sideNav span {
+  cursor: pointer;
+}
 
 .nav-section {
   position: -webkit-sticky;
