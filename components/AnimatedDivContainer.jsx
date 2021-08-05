@@ -37,7 +37,12 @@ export default function AnimatedDivContainer() {
         className={styles.container}
         onClick={() => set((open) => !open)}
       >
-        {!open && <h2 style={{ color: "#fff", textAlign: "center" }}>Personal projects</h2>}
+        {!open && (
+          <div style={{ color: "#fff", textAlign: "center" }}>
+            <h2>Personal projects</h2>
+            <p>(click to open)</p>
+          </div>
+        )}
         {transition((style, item) => (
           <animated.div
             className={styles.item}
@@ -62,7 +67,7 @@ export default function AnimatedDivContainer() {
             </a>
             <div style={{ maxWidth: "500px", width: "100%" }}>
               <a href={item.link} target="_blank" rel="noopener noreferrer">
-                <p class="underline-highlight">{item.text}</p>
+                <p className="underline-highlight">{item.text}</p>
               </a>
               <br /> <div style={{ textAlign: "center", borderBottom: "3px solid #cccccc7d" }}>Detais</div>
               {item.description.split(/\r?\n/).map((line) => (

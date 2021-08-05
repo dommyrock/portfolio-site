@@ -39,7 +39,6 @@ const Accordion = ({ children, isStackItem }) => {
   useEffect(() => {
     //add margin to height
     let alteredHeight = height + 20;
-    debugger;
     //Sets initial height
     setContentHeight(alteredHeight);
 

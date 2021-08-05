@@ -178,9 +178,22 @@ option2  https://codepen.io/esse/pen/qxmqPQ*/
 .underline-highlight {
   background: linear-gradient(0deg, rgb(0 126 255 / 19%) 30%, transparent 0);
   width: fit-content;
+  align-self: center;
 }
-.underline-highlight hover {
+.underline-highlight:hover {
   background: linear-gradient(to top, rgba(255, 255, 0, 0.384) 30%, transparent 30%);
+}
+.profile-picture {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+}
+.profile-picture img {
+  border-radius: 3%;
+  border: 3px solid #000;
 }
 
 /* Scrollbar css */

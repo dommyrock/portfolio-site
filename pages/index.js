@@ -9,6 +9,7 @@ import AnimatedIcon from "../components/AnimatedIcon";
 import { dotmetricsData, combisData } from "../data";
 import CompanyHeader from "../components/CompanyHeader";
 import { Azure, Go, Graphql, Slack, Typescript } from "../components/svgs/svgSheet";
+import Image from "next/image";
 
 //https://fontawesome.com/icons?d=gallery&p=2&s=brands&m=free
 //icons react docs https://fontawesome.com/how-to-use/on-the-web/using-with/react
@@ -25,25 +26,27 @@ import { Azure, Go, Graphql, Slack, Typescript } from "../components/svgs/svgShe
 
 */
 export default function Home() {
-  //SECTION REFS
-  const [[about, cmbs, dotm, personalProj]] = useState(() => [...Array(4)].map(createRef));
+  //SECTION REFS (this one have dirrect access to .current element, while observer ones have access to setref only)
+  const [[aboutSmooth, cmbsSmooth, dotmSmooth, personalProjSmooth]] = useState(() => [...Array(4)].map(createRef));
   //ALSO SECTION REFS
-  const [setRef, visible] = useElementObserver({ threshold: 0.2 });
-  const [setRef2, visible2] = useElementObserver({ threshold: 0.2 });
+  const [aboutRef, aboutVisible] = useElementObserver({ threshold: 0.2 });
+  const [cmbsRef, cmbsVisible] = useElementObserver({ threshold: 0.2 });
+  const [dotmRef, dotmVisible] = useElementObserver({ threshold: 0.2 });
+  const [personalProjRef, personalProjVisible] = useElementObserver({ threshold: 0.2 });
 
   function handleNavClick(key) {
     switch (key) {
       case "about":
-        about.current.scrollIntoView({ behavior: "smooth" });
+        aboutSmooth.current.scrollIntoView({ behavior: "smooth" });
         break;
       case "cmbs":
-        cmbs.current.scrollIntoView({ behavior: "smooth" });
+        cmbsSmooth.current.scrollIntoView({ behavior: "smooth" });
         break;
       case "dotm":
-        dotm.current.scrollIntoView({ behavior: "smooth" });
+        dotmSmooth.current.scrollIntoView({ behavior: "smooth" });
         break;
       case "personalProj":
-        personalProj.current.scrollIntoView({ behavior: "smooth" });
+        personalProjSmooth.current.scrollIntoView({ behavior: "smooth" });
         break;
       default:
         break;
@@ -76,12 +79,12 @@ export default function Home() {
         return <h3 id="acordionstack-items">{stackItem}</h3>;
     }
   }
-  const filterProjectSrc = (key) => {
+  function filterProjectSrc(key) {
     switch (key) {
       case "teams":
-        return <div class="ms-BrandIcon--icon96 ms-BrandIcon--teams"></div>;
+        return <div className="ms-BrandIcon--icon96 ms-BrandIcon--teams"></div>;
       case "sharepoint":
-        return <div class="ms-BrandIcon--icon96 ms-BrandIcon--sharepoint"></div>;
+        return <div className="ms-BrandIcon--icon96 ms-BrandIcon--sharepoint"></div>;
       case "ticket":
         return (
           <svg
@@ -103,18 +106,29 @@ export default function Home() {
       default:
         break;
     }
-  };
+  }
 
   return (
     <div className="home-container">
       <div id="socials_container">
         <SocialsContainer />
+        <div className="profile-picture">
+          <Image src="/profile_pict.webp" layout="responsive" width={160} height={220} />
+          <p className="underline-highlight">Dominik Polzer</p>
+        </div>
       </div>
       <div id="accordion_container" className="accordion-container unselectable">
         {/* Render /animate in text for this section , tan render workd data dynamicaly from data.js file*/}
-        <section ref={about} id="about-me"></section>
-        <CompanyHeader ref={cmbs} {...combisData} />
-        <section id="combis">
+        <section ref={aboutRef} id="about-me">
+          <p ref={aboutSmooth} style={{ color: "#ffff", paddingBottom: "2rem" }}>
+            Experienced in software development mostly in |C#|.NET Core| SQL|React.js| Vue.js |JS | HTML| CSS| AWS.
+            Experienced in project architecture. Web/Api/Service deployments and testing . In free time I also code my
+            own projects and experiment with other technologies for fun :)
+          </p>
+        </section>
+        <h3 style={{ color: "#3e3838" }}>Engineering experience:</h3>
+        <CompanyHeader ref={cmbsSmooth} {...combisData} />
+        <section id="combis-experience" ref={cmbsRef}>
           {combisData.projects.map((x) => (
             <>
               <div>
@@ -160,8 +174,8 @@ export default function Home() {
             </>
           ))}
         </section>
-        <CompanyHeader ref={dotm} {...dotmetricsData} />
-        <section id="dotmetrics">
+        <CompanyHeader ref={dotmSmooth} {...dotmetricsData} />
+        <section id="dotmetrics-experience" ref={dotmRef}>
           {dotmetricsData.projects.map((x) => (
             <>
               <div>
@@ -192,10 +206,9 @@ export default function Home() {
             </>
           ))}
         </section>
-        <section id="section1" ref={setRef}>
-          <AnimatedDivContainer />
-        </section>
-        <section id="section2" ref={setRef2}>
+        <section id="test-section" ref={personalProjRef}>
+          {/* Used only as anchor for for element bellow */}
+          <div ref={personalProjSmooth}></div>
           <AnimatedDivContainer />
         </section>
         <section id="my-intrests"></section>
@@ -205,34 +218,28 @@ export default function Home() {
         <nav className="nav-section">
           <ul id="sideNav">
             {/* <li id="nav_1" style={liVisibility} className={visible ? "nav-item" : ""> IF I WANT TO RE ADD ITEM*/}
-            <li id="nav_1">
+            <li id="aboutSection">
               <span>
-                <AnimatedIcon isVisible={visible} />
-                <a href="#about" onClick={() => handleNavClick("about")}>
-                  About me
-                </a>
+                <AnimatedIcon isVisible={aboutVisible} />
+                <a onClick={() => handleNavClick("about")}>About me</a>
               </span>
             </li>
-            <li id="nav_2">
+            <li id="cmbsExp">
               <span>
-                <AnimatedIcon isVisible={visible2} />
-                <a href="#cmbs-experience" onClick={() => handleNavClick("cmbs")}>
-                  Combis experience
-                </a>
+                <AnimatedIcon isVisible={cmbsVisible} />
+                <a onClick={() => handleNavClick("cmbs")}>Combis experience</a>
               </span>
             </li>
-            <li id="nav_3">
+            <li id="dotmExp">
               <span>
-                <a href="#dotm-experience" onClick={() => handleNavClick("dotm")}>
-                  Dotmetrics experience
-                </a>
+                <AnimatedIcon isVisible={dotmVisible} />
+                <a onClick={() => handleNavClick("dotm")}>Dotmetrics experience</a>
               </span>
             </li>
-            <li id="nav_4">
+            <li id="personalProjects">
               <span>
-                <a href="#personal-projects" onClick={() => handleNavClick("personalProj")}>
-                  Personal projects
-                </a>
+                <AnimatedIcon isVisible={personalProjVisible} />
+                <a onClick={() => handleNavClick("personalProj")}>Personal projects</a>
               </span>
             </li>
           </ul>

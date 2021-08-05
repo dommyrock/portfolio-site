@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 export default function useElementObserver(options) {
   const [ref, setRef] = useState(null);
   const [visible, setVisible] = useState(false);
-
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       setVisible(entry.isIntersecting);
@@ -25,21 +24,21 @@ export default function useElementObserver(options) {
   return [setRef, visible];
 }
 
-//helper
-function setNavClass(id) {
-  switch (id) {
-    case "section1":
-      document.getElementById("nav_1").classList.add("nav-item");
+//helper (gets section by id and shows nav item with specific nav id)
+function setNavClass(sectionId) {
+  switch (sectionId) {
+    case "about-me":
+      document.getElementById("aboutSection").classList.add("nav-item");
       break;
-    case "section2":
-      document.getElementById("nav_2").classList.add("nav-item");
+    case "combis-experience":
+      document.getElementById("cmbsExp").classList.add("nav-item");
       break;
-    // case "section2":
-    //   document.getElementById("nav_3").classList.add("nav-item");
-    //   break;
-    // case "section2":
-    //   document.getElementById("nav_4").classList.add("nav-item");
-    //   break;
+    case "dotmetrics-experience":
+      document.getElementById("dotmExp").classList.add("nav-item");
+      break;
+    case "test-section":
+      document.getElementById("personalProjects").classList.add("nav-item");
+      break;
     default:
       break;
   }
