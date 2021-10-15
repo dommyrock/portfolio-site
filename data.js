@@ -1,7 +1,7 @@
 export const combisData = {
   company: "Combis",
   logoSrc:
-    "https://media-exp1.licdn.com/dms/image/C560BAQFTxLkB_qoYwg/company-logo_100_100/0/1607436816105?e=1630540800&v=beta&t=0NRGkWmXK6l5vR_l4z3wGIIRbk5T49EyRDs_c8dNFl0",
+    "/cmbsIcon.jfif",
   date: "8.2019. -present",
   location: "Zagreb",
   role: "Fullstack Software Engineer",
@@ -78,7 +78,7 @@ export const combisData = {
 export const dotmetricsData = {
   company: "Dotmetrics",
   logoSrc:
-    "https://media-exp1.licdn.com/dms/image/C560BAQHgh8NxWVhSzg/company-logo_100_100/0/1579078366455?e=1630540800&v=beta&t=pLdddd7vyTszwrck2K49WN6I1-NiDtECLWMq-zQhzsg",
+    "/dotmIcon.jfif",
   date: "3.2018. -7.2019.",
   location: "Zagreb",
   role: "Junior Software Engineer",

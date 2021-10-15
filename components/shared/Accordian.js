@@ -3,8 +3,6 @@ import { useSpring, animated } from "react-spring";
 import { useMeasure } from "react-use";
 import style from "../../styles/accordion.module.css";
 
-//TODO: alter this to accept img optionaly and dynamic text inputs
-
 const Accordion = ({ children, isStackItem }) => {
   const defaultHeight = !isStackItem ? "180px" : "50px";
   // Manages the open or cloased state of the accordion
